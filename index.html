@@ -1,0 +1,462 @@
+ <!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Little Love ♡</title>
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Quicksand:wght@400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Quicksand', sans-serif;
+    background: #fff4f7;
+    color: #805765;
+    overflow-x: hidden;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.hero {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 35px 20px;
+    background:
+        radial-gradient(circle at 15% 20%, #ffffff 0 3%, transparent 4%),
+        radial-gradient(circle at 85% 75%, #ffffff 0 4%, transparent 5%),
+        linear-gradient(135deg, #ffe2eb, #fff8fa, #fbd5e1);
+    position: relative;
+    overflow: hidden;
+}
+
+.eyebrow {
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-size: 11px;
+    color: #bd8297;
+    margin-bottom: 18px;
+}
+
+h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(42px, 9vw, 75px);
+    color: #b66e89;
+    font-weight: normal;
+    line-height: 1.1;
+}
+
+.subtitle {
+    margin-top: 18px;
+    font-size: 15px;
+    color: #9e7181;
+}
+
+.heart {
+    color: #d987a4;
+    display: inline-block;
+    animation: heartbeat 1.5s infinite;
+}
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.25); }
+}
+
+.scroll {
+    margin-top: 55px;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #bd8297;
+    animation: float 2s infinite ease-in-out;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(9px); }
+}
+
+section {
+    padding: 75px 20px;
+}
+
+.section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 38px;
+    font-weight: normal;
+    text-align: center;
+    color: #b66e89;
+    margin-bottom: 12px;
+}
+
+.section-subtitle {
+    text-align: center;
+    font-size: 13px;
+    color: #a98290;
+    margin-bottom: 35px;
+}
+
+.characters {
+    background: #fffafd;
+}
+
+.character-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+    max-width: 850px;
+    margin: auto;
+}
+
+.character-card {
+    width: min(100%, 320px);
+    background: white;
+    border: 1px solid #f5dce5;
+    border-radius: 22px;
+    overflow: hidden;
+    box-shadow: 0 12px 35px #dba8b522;
+    transition: transform .35s, box-shadow .35s;
+}
+
+.character-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 18px 40px #dba8b544;
+}
+
+.character-card img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    object-position: center top;
+    background: #fbe8ef;
+    display: block;
+}
+
+.character-info {
+    padding: 22px;
+    text-align: center;
+}
+
+.character-info h3 {
+    font-family: 'DM Serif Display', serif;
+    color: #b66e89;
+    font-size: 25px;
+    font-weight: normal;
+}
+
+.character-info p {
+    margin-top: 8px;
+    font-size: 12px;
+    color: #ad8996;
+}
+
+.love-note {
+    background: linear-gradient(145deg, #fce5ed, #fff7fa);
+}
+
+.letter {
+    max-width: 650px;
+    margin: auto;
+    padding: 35px 28px;
+    background: #fffdfd;
+    border: 1px solid #f2d4df;
+    border-radius: 8px 25px 8px 25px;
+    box-shadow: 0 15px 35px #bd82971c;
+    position: relative;
+}
+
+.letter::before {
+    content: "♡";
+    position: absolute;
+    top: -23px;
+    right: 22px;
+    font-size: 40px;
+    color: #d58ba5;
+}
+
+.letter h3 {
+    font-family: 'DM Serif Display', serif;
+    font-size: 27px;
+    font-weight: normal;
+    color: #b66e89;
+    margin-bottom: 20px;
+}
+
+.letter p {
+    font-size: 14px;
+    line-height: 2;
+    margin-bottom: 14px;
+    color: #896b77;
+}
+
+.signature {
+    text-align: right;
+    color: #bd7892;
+    font-family: 'DM Serif Display', serif;
+    font-size: 21px;
+    margin-top: 25px;
+}
+
+.surprise {
+    text-align: center;
+    background: #fffafd;
+}
+
+.surprise-box {
+    max-width: 600px;
+    margin: auto;
+    padding: 35px 22px;
+    background: linear-gradient(135deg, #fff0f5, #ffffff);
+    border: 1px solid #f3d6e0;
+    border-radius: 25px;
+}
+
+.surprise-box p {
+    line-height: 1.8;
+    font-size: 14px;
+    margin: 15px 0 25px;
+}
+
+button {
+    border: none;
+    padding: 15px 28px;
+    border-radius: 30px;
+    background: #d88da8;
+    color: white;
+    font-family: 'Quicksand', sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    cursor: pointer;
+    box-shadow: 0 7px 18px #d88da855;
+    transition: .3s;
+}
+
+button:hover {
+    background: #bd718e;
+    transform: scale(1.05);
+}
+
+#reveal {
+    display: none;
+    margin-top: 25px;
+    padding: 25px;
+    background: white;
+    border-radius: 18px;
+    animation: appear .7s ease;
+}
+
+#reveal h3 {
+    font-family: 'DM Serif Display', serif;
+    color: #b66e89;
+    font-size: 27px;
+    font-weight: normal;
+    margin-bottom: 12px;
+}
+
+#reveal p {
+    line-height: 1.8;
+}
+
+@keyframes appear {
+    from { opacity: 0; transform: translateY(15px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+footer {
+    text-align: center;
+    padding: 30px 15px;
+    background: #f9e2eb;
+    color: #a8798b;
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* Corazones flotantes */
+.floating-heart {
+    position: fixed;
+    bottom: -30px;
+    color: #dc91aa;
+    opacity: .65;
+    pointer-events: none;
+    z-index: 10;
+    animation: rise linear forwards;
+}
+
+@keyframes rise {
+    to {
+        transform: translateY(-110vh) rotate(25deg);
+        opacity: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    section {
+        padding: 60px 17px;
+    }
+
+    .character-card img {
+        height: 320px;
+    }
+
+    .letter {
+        padding: 30px 22px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="hero">
+    <div class="eyebrow">A little story about love</div>
+    <h1>Yeo Taeju <span class="heart">♡</span><br>Kim Euihyun</h1>
+    <p class="subtitle">Dos corazones, una historia y miles de sentimientos.</p>
+    <div class="scroll">DESLIZA PARA DESCUBRIR ♡ ↓</div>
+</header>
+
+<section class="characters">
+    <h2 class="section-title">Our favorite boys</h2>
+    <p class="section-subtitle">Una historia que siempre tendrá un lugar especial ♡</p>
+
+    <div class="character-container">
+
+        <article class="character-card">
+            <img
+                src="https://tropedia.fandom.com/wiki/Special:FilePath/Low_Tide_in_Twilight_Yeo_Taeju.png"
+                alt="Yeo Taeju"
+                onerror="this.alt='Imagen de Yeo Taeju no disponible'; this.style.objectFit='contain';"
+            >
+            <div class="character-info">
+                <h3>Yeo Taeju</h3>
+                <p>Un personaje imposible de olvidar ♡</p>
+            </div>
+        </article>
+
+        <article class="character-card">
+            <img
+                src="https://tropedia.fandom.com/wiki/Special:FilePath/Low_Tide_in_Twilight_Kim_Euihyun.png"
+                alt="Kim Euihyun"
+                onerror="this.alt='Imagen de Kim Euihyun no disponible'; this.style.objectFit='contain';"
+            >
+            <div class="character-info">
+                <h3>Kim Euihyun</h3>
+                <p>Alguien que merece todo el cariño del mundo ♡</p>
+            </div>
+        </article>
+
+    </div>
+</section>
+
+<section class="love-note">
+    <h2 class="section-title">A little love letter</h2>
+    <p class="section-subtitle">Unas palabras desde el corazón ♡</p>
+
+    <div class="letter">
+        <h3>Para alguien especial...</h3>
+
+        <p>
+            Hay historias que llegan de una manera inesperada y terminan
+            ocupando un rinconcito muy bonito en nuestro corazón.
+            Esta es una de esas historias.
+        </p>
+
+        <p>
+            A veces no hacen falta demasiadas palabras para expresar
+            lo especial que puede llegar a ser alguien. Basta con una
+            mirada, un pequeño gesto o un momento que se queda guardado
+            en la memoria.
+        </p>
+
+        <p>
+            Que nunca falten los momentos bonitos, los abrazos sinceros
+            y esas pequeñas cosas que hacen que el corazón sonría.
+            Porque las historias más especiales son aquellas que
+            nos hacen sentir algo de verdad.
+        </p>
+
+        <p>
+            Y si pudiera guardar un sentimiento en una cajita,
+            sería cada uno de esos momentos que hacen esta historia
+            tan especial.
+        </p>
+
+        <div class="signature">Con mucho cariño ♡</div>
+    </div>
+</section>
+
+<section class="surprise">
+    <h2 class="section-title">One last surprise</h2>
+    <p class="section-subtitle">Hay algo más que quiero mostrarte...</p>
+
+    <div class="surprise-box">
+        <div style="font-size: 40px;">💌</div>
+        <p>
+            A veces, los detalles más pequeños son los que guardan
+            los sentimientos más grandes.
+        </p>
+
+        <button onclick="showSurprise()">Toca aquí para descubrir ♡</button>
+
+        <div id="reveal">
+            <h3>You're special ♡</h3>
+            <p>
+                Que nunca se apaguen las cosas bonitas que hacen
+                sonreír al corazón. Mereces una historia llena de
+                cariño, tranquilidad y momentos inolvidables.
+            </p>
+            <div style="font-size: 35px; margin-top: 15px;">🌷💕✨</div>
+        </div>
+    </div>
+</section>
+
+<footer>
+    MADE WITH LOVE ♡
+    <p style="margin-top: 9px;">Yeo Taeju & Kim Euihyun</p>
+</footer>
+
+<script>
+function showSurprise() {
+    const surprise = document.getElementById("reveal");
+    surprise.style.display = "block";
+
+    for (let i = 0; i < 18; i++) {
+        setTimeout(createHeart, i * 100);
+    }
+}
+
+function createHeart() {
+    const heart = document.createElement("div");
+    heart.className = "floating-heart";
+    heart.innerHTML = ["♡", "♥️", "💗", "✧"][Math.floor(Math.random() * 4)];
+
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (15 + Math.random() * 20) + "px";
+    heart.style.animationDuration = (4 + Math.random() * 4) + "s";
+
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 8000);
+}
+
+/* Corazones ambientales */
+setInterval(() => {
+    if (Math.random() > 0.35) createHeart();
+}, 1100);
+</script>
+
+</body>
+</html>
